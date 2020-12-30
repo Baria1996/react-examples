@@ -14,6 +14,8 @@ import App from "./App";
 // import HooksBasics from "./HooksBasics";
 import { FriendStatus } from "./CustomHooks";
 import { FriendListItem } from "./CustomHooks";
+import ParamsExample from "./ParamsExample";
+import Topics from "./Topics";
 
 // import * as serviceWorker from './serviceWorker';
 // ReactDOM.render(<App />, document.getElementById("root"));
@@ -37,9 +39,16 @@ ReactDOM.render(
           <li>
             <Link to="/item">Friend Item</Link>
           </li>
+          <li>
+            <Link to="/params">Params Example</Link>
+          </li>
+          <li>
+            <Link to="/topics">Topics</Link>
+          </li>
         </ul>
       </nav>
     </div>
+
     <Switch>
       <Route path="/app">
         <App />
@@ -50,6 +59,13 @@ ReactDOM.render(
       <Route path="/item">
         <FriendListItem friend={{ id: 36, name: "Allan Walker" }} />
       </Route>
+      <Route path="/params">
+        <ParamsExample />
+      </Route>
+      <Route path="/topics">
+        <Topics />
+      </Route>
+      {/* default path */}
       <Redirect to="/app" />
     </Switch>
   </Router>,
